@@ -322,7 +322,8 @@ class FetchGoods
      * @access     public
      * @return     bool       成功返回true，失败返回false
      */
-    public function createDir($dirname, $mode=0777, $recursive = false){
+    public function createDir($dirname, $mode=0777, $recursive = false)
+    {
         if (!$recursive) {
             $ret = @mkdir($dirname, $mode);
             if($ret) @chmod($dirname, $mode);
@@ -347,7 +348,8 @@ class FetchGoods
      * @access     public
      * @return     bool       成功返回true，失败返回false
      */
-    public function checkDir($dirname, $autocreate=false){
+    public function checkDir($dirname, $autocreate=false)
+    {
         if (is_dir($dirname)) {
             return true;
         } else {
