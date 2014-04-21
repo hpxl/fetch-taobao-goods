@@ -1,3 +1,5 @@
-fetch-taobao-goods
+使用方法
 ==================
-淘宝、天猫商品采集
+```php
+php FetchGoods.php 'http://*.taoabo.com'
+```
