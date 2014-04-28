@@ -21,8 +21,8 @@ $shop_url = trim($argv[1]);
 
 // 检查店铺地址是否正确
 if (empty($shop_url)) {
-	echo "参数错误，请输入店铺地址\n";
-	exit(-1);
+    echo "参数错误，请输入店铺地址\n";
+    exit(-1);
 }
 
 include 'HttpFetch.class.php';
