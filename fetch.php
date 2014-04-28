@@ -28,6 +28,6 @@ if (empty($shop_url)) {
 include 'HttpFetch.class.php';
 include 'FetchGoods.class.php';
 
-// 运行此文件
+// 执行商品采集
 $FetchGoods = new FetchGoods();
 $FetchGoods->run($shop_url);
