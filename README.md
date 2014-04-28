@@ -5,7 +5,7 @@
 -------------
 
 ```php
-php FetchGoods.php 'http://*.taoabo.com/'
+php fetch.php 'http://*.taoabo.com/'
 ```
 
 功能说明
