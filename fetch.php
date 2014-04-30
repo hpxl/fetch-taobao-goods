@@ -9,7 +9,7 @@ if (substr(php_sapi_name(), 0, 3) !== 'cli') {
 }
 
 // 记录进程是否在运行
-define("PIDFILE", '/tmp/fetchgoods.pid');
+define("PIDFILE", dirname(__FILE__). '/fetchgoods.pid');
 file_put_contents(PIDFILE, getmypid());
 function removePidFile() {
     unlink(PIDFILE);
