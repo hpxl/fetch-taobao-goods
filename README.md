@@ -6,7 +6,7 @@
 -------------
 
 ```php
-# 参数店铺url
+# 参数店铺url，如：
 php fetch.php 'http://*.taoabo.com/'
 ```
 
