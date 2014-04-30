@@ -66,6 +66,9 @@ class FetchGoods
         // 实例化http采集类
         $this->_httpFetch = new HttpFetch();
 
+        // 店铺多个分类
+        $category_urls = array();
+
         // 淘宝店铺所有宝贝列表需要登录更新cookie才可以抓取
         // 为了避免登录，采集店铺分类列表
         if ($this->_sitename == 'taobao') {
@@ -75,7 +78,10 @@ class FetchGoods
             $category_urls = $this->collectAll($search_source, $rule_shop_category);
             $category_urls && $category_urls = array_flip(array_flip($category_urls));
             $search_source = null;
-        } else {
+        }
+
+        // 如果未获取到分类地址，默认全部商品
+        if (empty($category_urls)) {
             $category_urls = array($search_url);
         }
 
@@ -106,7 +112,7 @@ class FetchGoods
         // 最多采集20页
         for ($page_num = 1; $page_num < 20; $page_num++) {
             $page_url = "{$category_url}&pageNo={$page_num}";
-            $page_source = $this->_httpFetch->proxyGet($page_url);
+            $page_source = $this->_httpFetch->get($page_url);
 
             // 该页没有找到商品，采集完成
             if (false !== strpos($page_source, '<p class="item-not-found">')) {
