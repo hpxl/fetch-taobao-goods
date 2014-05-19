@@ -231,7 +231,7 @@ class FetchGoods
      */
     private function _getRules($site_name='taobao', $name='')
     {
-        static $rules;
+        static $rules = array();
 
         if (empty($rules)) {
             // 淘宝
